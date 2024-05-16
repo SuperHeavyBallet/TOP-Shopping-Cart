@@ -7,6 +7,7 @@ import {
 } from "react-router-dom"
 import HomePage from './Components/HomePage/homePage'
 import ShopPage from './Components/ShopPage/shopPage.jsx'
+import ShoppingCart from './Components/ShoppingCart/shoppingCart.jsx'
 
 const router = createBrowserRouter([
   {

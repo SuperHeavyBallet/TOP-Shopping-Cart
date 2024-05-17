@@ -3,23 +3,23 @@
     "products": [
         {
             "id": 1,
-            "name": "Product 1",
-            "price": "5.99"
+            "name": "Bread",
+            "price": "0.99"
         },
         {
             "id": 2,
-            "name": "Product 2",
-            "price": "9.99"
+            "name": "Milk",
+            "price": "1.99"
         },
         {
             "id": 3,
-            "name": "Product 3",
-            "price": "7.99"
+            "name": "Potato",
+            "price": "0.59"
         },
         {
             "id": 4,
-            "name": "Product 4",
-            "price": "2.99"
+            "name": "Water",
+            "price": "0.99"
         }
     ]
 }

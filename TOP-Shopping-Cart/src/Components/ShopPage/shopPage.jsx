@@ -8,13 +8,13 @@ import { useEffect, useState } from "react";
 export default function ShopPage()
 {
     const [ cartContents, setCartContents ] = useState([]);
-
+/*
     useEffect(() => 
     {
         const savedCart = localStorage.getItem('cartContents');
         if (savedCart)
         {
-            setCartContents(JSON.parse(savedCart));
+            //setCartContents(JSON.parse(savedCart));
         }
     }, []);
 
@@ -22,11 +22,11 @@ export default function ShopPage()
     {
         localStorage.setItem("cartContents", JSON.stringify(cartContents));
         }, [cartContents]);
-
-    function handleAddProductToCart(itemQuantity, productName)
+*/
+    function handleAddProductToCart(itemQuantity, productName, productPrice)
     {
         
-        setCartContents(prevContents => [[productName, itemQuantity], ...prevContents]);
+        setCartContents([productName, itemQuantity, productPrice]);
 
         
     }
@@ -43,7 +43,7 @@ export default function ShopPage()
                             key={product.id}
                             productName={product.name}
                             productPrice={product.price}
-                            addProductToCart={(itemQuantity) => handleAddProductToCart(itemQuantity, product.name)}
+                            addProductToCart={(itemQuantity) => handleAddProductToCart(itemQuantity, product.name, product.price)}
                         />
                     )
                 }
@@ -51,9 +51,12 @@ export default function ShopPage()
                 Shop Page
             </div>
 
+                    {cartContents.length > 0 && (
+        <ShoppingCart itemToAdd={cartContents} />
+    )}
+
             
-                <ShoppingCart
-                    itemToAdd={cartContents}></ShoppingCart>
+                
 
 
        

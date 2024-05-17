@@ -10,7 +10,7 @@ export default function ProductItem( { productName, productPrice, addProductToCa
     {
         console.log({productName}, itemQuantity);
 
-    }, itemQuantity)
+    }, [itemQuantity])
 
     function handleQuantityChange(e)
     {
@@ -19,8 +19,14 @@ export default function ProductItem( { productName, productPrice, addProductToCa
     }
     function handleSubmitOrder()
     {
+       
+        if (itemQuantity > 0) {
+            addProductToCart(itemQuantity);
+        } else {
+            alert("Please select a quantity greater than 0.");
+        }
 
-        addProductToCart(itemQuantity);
+        
     }
     return(
         <div className={styles.productItem}>

@@ -1,0 +1,28 @@
+.shoppingCartItem{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.shoppingCartItemName{
+    display: flex;
+    flex-direction: row;
+}
+
+.shoppingCartItemName h4{
+    padding: 0.2vh 0.2vw;
+}
+
+
+.shoppingCartItemQuantityPrice{
+    display: flex;
+    flex-direction: row;
+}
+
+.shoppingCartItemTotalPrice{
+
+    display: flex;
+    flex-direction: row;
+}

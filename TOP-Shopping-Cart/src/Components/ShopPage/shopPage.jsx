@@ -26,7 +26,7 @@ export default function ShopPage()
     function handleAddProductToCart(itemQuantity, productName)
     {
         
-        setCartContents(prevContents => [[productName, itemQuantity], prevContents]);
+        setCartContents(prevContents => [[productName, itemQuantity], ...prevContents]);
 
         
     }

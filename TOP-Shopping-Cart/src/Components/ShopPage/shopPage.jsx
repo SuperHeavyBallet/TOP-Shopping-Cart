@@ -23,13 +23,43 @@ export default function ShopPage()
         localStorage.setItem("cartContents", JSON.stringify(cartContents));
         }, [cartContents]);
 */
+
+    useEffect(() =>
+    {
+        console.log("CONTENTS: ",cartContents);
+    }, [cartContents]);
+
     function handleAddProductToCart(itemQuantity, productName, productPrice)
     {
+        console.log(productName);
+
+        for (let i = 0; i < cartContents.length; i++)
+        {
+            if(cartContents[i][0] === productName)
+            {
+                console.log("Got a dupe!");
+
+                const tempArray = cartContents;
+                console.log("Temp: " , tempArray[i][0],  tempArray[i][1]);
+                tempArray[i][1] = ((Number(tempArray[i][1]) + Number(itemQuantity)));
+                
+                setCartContents(tempArray);
+                return;
+            }
+        }
         
-        setCartContents([productName, itemQuantity, productPrice]);
+        setCartContents(prevContents => [...prevContents,[productName, Number(itemQuantity), Number(productPrice)]]);
 
         
     }
+
+    function handleRemoveItem(item, key)
+    {
+        console.log(item);
+        const newCartContents = cartContents.filter(cartItem => cartItem[0] !== item[0]);
+        setCartContents(newCartContents);
+    }
+
     return(
         <div>
 
@@ -52,7 +82,10 @@ export default function ShopPage()
             </div>
 
                     {cartContents.length > 0 && (
-        <ShoppingCart itemToAdd={cartContents} />
+        <ShoppingCart 
+            itemToAdd={cartContents} 
+            onRemoveItem={(item) => handleRemoveItem(item)}
+            />
     )}
 
             

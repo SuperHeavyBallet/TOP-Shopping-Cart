@@ -30,6 +30,7 @@ export default function ProductItem( { productName, productPrice, addProductToCa
     }
     return(
         <div className={styles.productItem}>
+            <h3>{}</h3>
             <h3>{productName}</h3>
             <h3>${productPrice}</h3>
             <div>Quantity:</div>

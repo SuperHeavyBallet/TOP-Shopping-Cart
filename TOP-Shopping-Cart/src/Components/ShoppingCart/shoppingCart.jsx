@@ -1,26 +1,23 @@
 import { useState, useEffect } from "react";
 import styles from "./shoppingCart.module.css";
 import ShoppingCartItem from "./ShoppingCartItem/shoppingCartItem";
+import { v4 as uuidv4 } from 'uuid'
+import { key } from "localforage";
 
-export default function ShoppingCart( {itemToAdd, })
+export default function ShoppingCart( {itemToAdd, onRemoveItem })
 {
     const [ itemsInCart, setItemsInCart ] = useState([]);
 
     useEffect(() => {
         if (itemToAdd) {
-            setItemsInCart(prevItems => [...prevItems, itemToAdd]);
-            console.log(itemsInCart);
+            setItemsInCart(itemToAdd);
         }
     }, [itemToAdd]);
 
-    function handleRemoveItem(itemName)
+    function handleRemoveItem(item)
     {
-        window.alert("Clicked Remove Item: ", itemName);
+        onRemoveItem(item);
     }
-
-    /*
-
-    */
 
 
 
@@ -29,12 +26,12 @@ export default function ShoppingCart( {itemToAdd, })
             <h3>Shopping Cart</h3>
             {itemsInCart.map((item, index) => (
                 <ShoppingCartItem 
-                key={index}
+                key={uuidv4()}
                 className={styles.cartItem}
                 itemName={item[0]}
                 itemQuantity={item[1]}
                 itemPrice={item[2]}
-                onRemoveItem={() => handleRemoveItem(index)}
+                onRemoveItem={() => handleRemoveItem(item)}
                 />
                 
 

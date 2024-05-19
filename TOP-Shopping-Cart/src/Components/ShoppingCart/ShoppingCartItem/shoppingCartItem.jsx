@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./shoppingCartItem.module.css"
 
-export default function ShoppingCartItem( {itemName, itemQuantity, itemPrice, onRemoveItem})
+export default function ShoppingCartItem( { itemName, itemQuantity, itemPrice, onRemoveItem})
 {
 
     useEffect(() =>

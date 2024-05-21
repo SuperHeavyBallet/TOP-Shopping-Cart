@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     element: <ShopPage />
   }
 ])
-import App from './App.jsx'
+
 import './index.css'
 
 

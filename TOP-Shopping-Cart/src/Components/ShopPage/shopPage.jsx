@@ -61,38 +61,35 @@ export default function ShopPage()
     }
 
     return(
-        <div>
+        <div className={styles.wholePage}>
 
             <NavBar />
 
             <div className={styles.pageContainer}>
 
+                <div className={styles.mainArea}>
                 {
                     productsList.products.map((product) =>
                         <ProductItem
                             key={product.id}
+                            productImage={product.image}
                             productName={product.name}
                             productPrice={product.price}
                             addProductToCart={(itemQuantity) => handleAddProductToCart(itemQuantity, product.name, product.price)}
                         />
                     )
                 }
-
-                Shop Page
+                </div>
+                <div className={styles.sideArea}>
+                {cartContents.length > 0 && (
+                <ShoppingCart 
+                    itemToAdd={cartContents} 
+                    onRemoveItem={(item) => handleRemoveItem(item)}
+                />
+                )}
+                </div>              
             </div>
 
-                    {cartContents.length > 0 && (
-        <ShoppingCart 
-            itemToAdd={cartContents} 
-            onRemoveItem={(item) => handleRemoveItem(item)}
-            />
-    )}
-
-            
-                
-
-
-       
         </div>
     )
 }

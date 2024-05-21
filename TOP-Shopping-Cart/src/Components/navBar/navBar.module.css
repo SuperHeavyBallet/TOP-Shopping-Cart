@@ -1,16 +1,40 @@
+*{
+    --background-color: rgb(204, 88, 88);
+    --dark-accent-color: rgb(114, 39, 39);
+    --light-accent-color: bisque;
+}
+
 .navBar{
     display: flex;
     flex-direction: row;
+    width: 100vw;
+    background-color: var(--background-color);
+    
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    
 
 
 }
 
 .navBarLink{
-    border: 1px solid black;
+    border-left: 1px solid var(--dark-accent-color);
+    border-right: 1px solid var(--dark-accent-color);
     padding: 0.2vh 1vw;
+    margin: 0;
+}
+
+.navBarLink:hover{
+    background-color: var(--light-accent-color);
+}
+
+.navBarLink:hover > h3{
+    color: var(--dark-accent-color);
 }
 
 .navBarLink > h3{
     padding: 0;
     margin: 0;
+    color: var(--light-accent-color);
 }

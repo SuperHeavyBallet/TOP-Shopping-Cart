@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import styles from "./productItem.module.css"
 
-export default function ProductItem( { productName, productPrice, addProductToCart})
+export default function ProductItem( { productImage, productName, productPrice, addProductToCart})
 {
 
     const [itemQuantity, setItemQuantity] = useState("0");
@@ -30,7 +30,12 @@ export default function ProductItem( { productName, productPrice, addProductToCa
     }
     return(
         <div className={styles.productItem}>
-            <h3>{}</h3>
+           <div className={styles.leftArea}>
+            <img className={styles.image} src={productImage}></img>
+            
+            </div>
+
+            <div className={styles.rightArea}>
             <h3>{productName}</h3>
             <h3>${productPrice}</h3>
             <div>Quantity:</div>
@@ -50,6 +55,7 @@ export default function ProductItem( { productName, productPrice, addProductToCa
 
             </select>
             <button onClick={handleSubmitOrder}>Add To Cart</button>
+            </div>
         </div>
     )
 }

@@ -8,3 +8,4 @@ TODO:
 - Add Shopping Cart Header always present, click to expand
 - Add Shopping Cart 'Go To Checkout' Section
 - Add Shopping Cart "Total Price" Section
+- Update input to clear on submit

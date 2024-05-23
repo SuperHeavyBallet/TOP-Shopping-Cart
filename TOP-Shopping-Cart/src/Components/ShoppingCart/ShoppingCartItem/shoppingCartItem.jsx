@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./shoppingCartItem.module.css"
 
-export default function ShoppingCartItem( { itemName, itemQuantity, itemPrice, onRemoveItem})
+export default function ShoppingCartItem( { itemImage, itemName, itemQuantity, itemPrice, onRemoveItem, itemTotal})
 {
 
     useEffect(() =>
@@ -10,11 +10,14 @@ export default function ShoppingCartItem( { itemName, itemQuantity, itemPrice, o
 
     }, [itemQuantity]);
 
+   
+
     const [ totalItemPrice, setTotalItemPrice ] = useState(0);
 
     function calculateTotalItemPrice()
     {
         setTotalItemPrice(itemPrice * itemQuantity);
+        
     }
 
     function handleRemoveItem()
@@ -22,17 +25,28 @@ export default function ShoppingCartItem( { itemName, itemQuantity, itemPrice, o
         onRemoveItem();
     }
 
+
     return(
         <div className={styles.shoppingCartItem}>
-            <div className={styles.shoppingCartItemName}>
-                <h4>{itemName} </h4>
-                <h4> ${itemPrice}</h4>
+            <div className={styles.leftSide}>
+                <div className={styles.shoppingCartImage}>
+                    <img src={itemImage}></img>
+                </div>
             </div>
-            <div className={styles.shoppingCartItemQuantityPrice}>
-                <div>x {itemQuantity}</div>
+            <div className={styles.rightSide}>
+                <div className={styles.shoppingCartItemName}>
+                    <h4>{itemName} </h4>
+                    <h4> ${itemPrice}</h4>
+                </div>
+                <div className={styles.shoppingCartItemQuantityPrice}>
+                    <div>x {itemQuantity}</div>
+                </div>
+                <div className={styles.shoppingCartItemTotalPrice}>Total: {totalItemPrice}</div>
+                <div 
+                    onClick={handleRemoveItem}
+                    className={styles.removeButton}
+                    >Remove Item</div>
             </div>
-            <div className={styles.shoppingCartItemTotalPrice}>Total: {totalItemPrice}</div>
-            <div onClick={handleRemoveItem}>Remove Item</div>
         </div>
     )
 }

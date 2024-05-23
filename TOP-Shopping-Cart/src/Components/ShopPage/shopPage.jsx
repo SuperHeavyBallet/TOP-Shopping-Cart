@@ -5,31 +5,17 @@ import productsList from "./productList.json"
 import ShoppingCart from "../ShoppingCart/shoppingCart.jsx";
 import { useEffect, useState } from "react";
 
-export default function ShopPage()
+export default function ShopPage( { currentCartItems, onCartItemsChange } )
 {
-    const [ cartContents, setCartContents ] = useState([]);
-/*
-    useEffect(() => 
-    {
-        const savedCart = localStorage.getItem('cartContents');
-        if (savedCart)
-        {
-            //setCartContents(JSON.parse(savedCart));
-        }
-    }, []);
-
-    useEffect(() =>
-    {
-        localStorage.setItem("cartContents", JSON.stringify(cartContents));
-        }, [cartContents]);
-*/
+    const [ cartContents, setCartContents ] = useState(currentCartItems);
 
     useEffect(() =>
     {
         console.log("CONTENTS: ",cartContents);
-    }, [cartContents]);
+        onCartItemsChange(cartContents);
+    }, [cartContents, onCartItemsChange]);
 
-    function handleAddProductToCart(itemQuantity, productName, productPrice)
+    function handleAddProductToCart(itemQuantity, productName, productPrice, productImage)
     {
         console.log(productName);
 
@@ -37,10 +23,9 @@ export default function ShopPage()
         {
             if(cartContents[i][0] === productName)
             {
-                console.log("Got a dupe!");
 
                 const tempArray = cartContents;
-                console.log("Temp: " , tempArray[i][0],  tempArray[i][1]);
+                
                 tempArray[i][1] = ((Number(tempArray[i][1]) + Number(itemQuantity)));
                 
                 setCartContents(tempArray);
@@ -48,7 +33,7 @@ export default function ShopPage()
             }
         }
         
-        setCartContents(prevContents => [...prevContents,[productName, Number(itemQuantity), Number(productPrice)]]);
+        setCartContents(prevContents => [...prevContents,[productName, Number(itemQuantity), Number(productPrice), productImage]]);
 
         
     }
@@ -71,22 +56,23 @@ export default function ShopPage()
                 {
                     productsList.products.map((product) =>
                         <ProductItem
+                        
                             key={product.id}
                             productImage={product.image}
                             productName={product.name}
                             productPrice={product.price}
-                            addProductToCart={(itemQuantity) => handleAddProductToCart(itemQuantity, product.name, product.price)}
+                            addProductToCart={(itemQuantity) => handleAddProductToCart(itemQuantity, product.name, product.price, product.image)}
                         />
                     )
                 }
                 </div>
                 <div className={styles.sideArea}>
-                {cartContents.length > 0 && (
+
                 <ShoppingCart 
                     itemToAdd={cartContents} 
                     onRemoveItem={(item) => handleRemoveItem(item)}
                 />
-                )}
+         
                 </div>              
             </div>
 

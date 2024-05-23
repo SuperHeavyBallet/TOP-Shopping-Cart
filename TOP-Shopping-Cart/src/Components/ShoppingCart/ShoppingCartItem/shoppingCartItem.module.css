@@ -1,9 +1,40 @@
 .shoppingCartItem{
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
+
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: 0.7fr 1fr;
     justify-content: center;
     align-items: center;
+    
+    max-width: 400px;
+    margin: 1vh 1vw;
+    border-radius: 5px;
+    box-shadow: 2.5px 5px 1px black;
+}
+
+.shoppingCartItem:hover{
+    transform: scale(102%);
+}
+
+.leftSide{
+    background-color: aliceblue;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    max-height: 200px;
+    border-radius: 5px 0 0 5px;
+    
+
+
+}
+
+.rightSide{
+    height: 100%;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0 5px 5px 0;
 }
 
 .shoppingCartItemName{
@@ -25,4 +56,20 @@
 
     display: flex;
     flex-direction: row;
+}
+
+.shoppingCartImage{
+    height: 100%;
+}
+
+.shoppingCartImage > img{
+    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px 0 0 5px;
+    
 }

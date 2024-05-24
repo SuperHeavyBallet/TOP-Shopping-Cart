@@ -26,6 +26,8 @@ export default function ProductItem( { productImage, productName, productPrice, 
             alert("Please select a quantity greater than 0.");
         }
 
+        setItemQuantity(0);
+
         
     }
     return(
@@ -39,9 +41,9 @@ export default function ProductItem( { productImage, productName, productPrice, 
             <h3>{productName}</h3>
             <h3>${productPrice}</h3>
             <div>Quantity:</div>
-            <select id="quantity" name="quantity"
+            <select value={itemQuantity} id="quantity" name="quantity"
                 onChange={handleQuantityChange}>
-                <option value={0}>0</option>
+                <option value={0} >0</option>
                 <option value={1}>1</option>
                 <option value={2}>2</option>
                 <option value={3}>3</option>

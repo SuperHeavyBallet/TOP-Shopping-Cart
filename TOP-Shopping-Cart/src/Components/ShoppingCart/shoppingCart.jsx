@@ -28,7 +28,7 @@ export default function ShoppingCart( {itemToAdd, onRemoveItem })
     function calculateTotal(items)
     {
 
-        const newTotal = items.reduce((acc, item) => acc + (Number(item[1]) * Number(item[2])), 0);
+        const newTotal = (items.reduce((acc, item) => acc + (Number(item[1]) * Number(item[2])), 0)).toFixed(2);
 
         setTotal(newTotal);
         

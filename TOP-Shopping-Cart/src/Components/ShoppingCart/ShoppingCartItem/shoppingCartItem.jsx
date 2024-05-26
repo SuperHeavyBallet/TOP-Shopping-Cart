@@ -16,7 +16,7 @@ export default function ShoppingCartItem( { itemImage, itemName, itemQuantity, i
 
     function calculateTotalItemPrice()
     {
-        setTotalItemPrice(itemPrice * itemQuantity);
+        setTotalItemPrice((itemPrice * itemQuantity).toFixed(2));
         
     }
 

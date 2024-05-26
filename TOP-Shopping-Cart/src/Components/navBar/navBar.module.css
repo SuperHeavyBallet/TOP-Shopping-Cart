@@ -33,8 +33,10 @@
     margin: 0;
 }
 
+
 .navBarLink:hover{
     background-color: var(--light-accent-color);
+    cursor: pointer;
 }
 
 .navBarLink:hover > h3{
@@ -45,4 +47,13 @@
     padding: 0;
     margin: 0;
     color: var(--light-accent-color);
+}
+
+.current{
+    background-color: var(--light-accent-color);
+    
+}
+
+.current > h3{
+    color: var(--dark-accent-color);
 }

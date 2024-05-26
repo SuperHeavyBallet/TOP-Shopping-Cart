@@ -4,7 +4,7 @@ import ShoppingCartItem from "./ShoppingCartItem/shoppingCartItem";
 import { v4 as uuidv4 } from 'uuid'
 import { key } from "localforage";
 
-export default function ShoppingCart( {itemToAdd, onRemoveItem })
+export default function ShoppingCart( {itemToAdd, onRemoveItem, isHomePage })
 {
     const [ itemsInCart, setItemsInCart ] = useState([]);
     const [ total, setTotal ] = useState(0);
@@ -31,13 +31,11 @@ export default function ShoppingCart( {itemToAdd, onRemoveItem })
         const newTotal = (items.reduce((acc, item) => acc + (Number(item[1]) * Number(item[2])), 0)).toFixed(2);
 
         setTotal(newTotal);
-        
+    }
 
-        
-        
-
-
-
+    function handleGoToCheckoutClick()
+    {
+        window.alert("Go to checkout!" + itemsInCart);
     }
 
 
@@ -53,6 +51,7 @@ export default function ShoppingCart( {itemToAdd, onRemoveItem })
                 itemQuantity={item[1]}
                 itemPrice={item[2]}
                 itemImage={item[3]}
+                
                 onRemoveItem={() => handleRemoveItem(item)}
                 
                 />
@@ -60,8 +59,14 @@ export default function ShoppingCart( {itemToAdd, onRemoveItem })
 
             ))}
             
+                <div className={styles.shoppingCartTotal}>
                 <h3>Total: ${total}</h3>
-            
+                </div>
+
+                <div className={styles.shoppingCartGoToCheckout}
+                onClick={handleGoToCheckoutClick}>
+                    <h3>Go to Checkout</h3>
+                </div>
         </div>
     )
 }

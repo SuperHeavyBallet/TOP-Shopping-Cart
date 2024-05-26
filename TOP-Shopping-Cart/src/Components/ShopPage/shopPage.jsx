@@ -4,6 +4,7 @@ import styles from "./shopPage.module.css"
 import productsList from "./productList.json"
 import ShoppingCart from "../ShoppingCart/shoppingCart.jsx";
 import { useEffect, useState } from "react";
+import Footer from "../Footer/Footer.jsx";
 
 export default function ShopPage( { currentCartItems, onCartItemsChange } )
 {
@@ -19,21 +20,23 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
     {
         console.log(productName);
 
-        for (let i = 0; i < cartContents.length; i++)
-        {
-            if(cartContents[i][0] === productName)
-            {
+        let updated = false;
 
-                const tempArray = cartContents;
-                
-                tempArray[i][1] = ((Number(tempArray[i][1]) + Number(itemQuantity)));
-                
-                setCartContents(tempArray);
-                return;
+        const newCartContents = cartContents.map((item) => {
+            if (item[0] === productName) {
+                updated = true;
+                return [item[0], Number(item[1] + Number(itemQuantity), item[2], item[3])];
             }
+            return item;
+        });
+
+        if (!updated)
+        {
+            newCartContents.push([productName, Number(itemQuantity), Number(productPrice), productImage]);
+
         }
-        
-        setCartContents(prevContents => [...prevContents,[productName, Number(itemQuantity), Number(productPrice), productImage]]);
+
+        setCartContents(newCartContents);
 
         
     }
@@ -74,6 +77,10 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
                 />
          
                 </div>              
+            </div>
+
+            <div>
+                <Footer />
             </div>
 
         </div>

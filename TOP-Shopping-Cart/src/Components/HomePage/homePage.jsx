@@ -4,6 +4,7 @@ import styles from "./homePage.module.css"
 import ShoppingCart from "../ShoppingCart/shoppingCart.jsx"
 import { useState } from "react"
 import HomePageTopDisplay from "./HomePageItems/homePageTopDisplay.jsx"
+import Footer from "../Footer/Footer.jsx"
 
 export default function HomePage({currentCartItems}){
 
@@ -22,8 +23,13 @@ export default function HomePage({currentCartItems}){
 
                 <div className={styles.sideArea}>
                 <ShoppingCart 
-                itemToAdd={cartContents}/>
+                itemToAdd={cartContents}
+                isHomePage={true}/>
                 </div>
+            </div>
+
+            <div>
+                <Footer />
             </div>
         </div>
     )

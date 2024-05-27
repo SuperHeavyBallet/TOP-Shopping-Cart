@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import styles from "./productItem.module.css"
 
-export default function ProductItem( { productImage, productName, productPrice, addProductToCart})
+export default function ProductItem( { productImage, productName, productPrice, productQuantity, addProductToCart})
 {
 
     const [itemQuantity, setItemQuantity] = useState("0");

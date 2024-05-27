@@ -18,25 +18,30 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
 
     function handleAddProductToCart(itemQuantity, productName, productPrice, productImage)
     {
-        console.log(productName);
 
-        let updated = false;
-
-        const newCartContents = cartContents.map((item) => {
-            if (item[0] === productName) {
-                updated = true;
-                return [item[0], Number(item[1] + Number(itemQuantity), item[2], item[3])];
-            }
-            return item;
-        });
-
-        if (!updated)
+        // Check if item to add is already in the cart
+        for (let i = 0; i < cartContents.length; i++)
         {
-            newCartContents.push([productName, Number(itemQuantity), Number(productPrice), productImage]);
+            if(cartContents[i][0] === productName)
+            {
+                console.log("Already in Cart");
 
+                // Make copy of current cart contents to edit and then set
+                const tempArray = [...cartContents];
+
+                const originalQuantity = tempArray[i][1];
+                const newQuantity = Number(originalQuantity) + Number(itemQuantity);
+
+                tempArray[i][1] = newQuantity;
+
+                setCartContents(tempArray);
+                return;
+     
+            }
         }
-
-        setCartContents(newCartContents);
+        
+        //If not, just add the new item to the array
+        setCartContents(prevContents => [...prevContents,[productName, Number(itemQuantity), Number(productPrice), productImage]]);
 
         
     }
@@ -64,6 +69,7 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
                             productImage={product.image}
                             productName={product.name}
                             productPrice={product.price}
+                            
                             addProductToCart={(itemQuantity) => handleAddProductToCart(itemQuantity, product.name, product.price, product.image)}
                         />
                     )

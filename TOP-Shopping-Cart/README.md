@@ -13,5 +13,8 @@ TODO:
 - `Reduce total to 2 decimal places`
 - `Add Home Page - show catalogue of a few images, make array of all product images/names from JSON file, pick 3 at random from that array to display on the front page - INSTEAD, latest 4 Entries in JSON to show newest additions`
 - fix CSS of shopping cart items
-- Add Shopping Cart 'Go To Checkout' Section
+- `Add Shopping Cart 'Go To Checkout' Section`
 - `fix shop link when in shop moving to /shop/shop, an invalid link`
+- `Add Checkout Page`
+- CSS for Checkout Page
+- Create Shopping Cart version for Checkout Page

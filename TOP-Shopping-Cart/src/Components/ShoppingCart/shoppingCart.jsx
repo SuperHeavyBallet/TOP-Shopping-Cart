@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import styles from "./shoppingCart.module.css";
 import ShoppingCartItem from "./ShoppingCartItem/shoppingCartItem";
 import { v4 as uuidv4 } from 'uuid'
@@ -33,9 +34,19 @@ export default function ShoppingCart( {itemToAdd, onRemoveItem, isHomePage })
         setTotal(newTotal);
     }
 
-    function handleGoToCheckoutClick()
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    function handleGoToCheckoutClick(e)
     {
-        window.alert("Go to checkout!" + itemsInCart);
+        if (location.pathname === "/checkout")
+        {
+            e.preventDefaul();
+        }
+        else
+        {
+            navigate("/checkout");
+        }
     }
 
 

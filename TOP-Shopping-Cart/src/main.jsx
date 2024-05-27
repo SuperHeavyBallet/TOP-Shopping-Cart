@@ -10,6 +10,7 @@ import './index.css'
 import HomePage from './Components/HomePage/homePage'
 import ShopPage from './Components/ShopPage/shopPage.jsx'
 import ShoppingCart from './Components/ShoppingCart/shoppingCart.jsx'
+import CheckoutPage from './Components/CheckoutPage/checkoutPage.jsx'
 
 function Main()
 {
@@ -32,6 +33,12 @@ const router = createBrowserRouter([
     element: <ShopPage 
       currentCartItems={currentCartContents} onCartItemsChange={handleCartItemsChange}
       />
+  },
+  {
+    path: "checkout",
+    element: <CheckoutPage
+    currentCartItems={currentCartContents} onCartItemsChange={handleCartItemsChange}
+    />
   }
 ])
 

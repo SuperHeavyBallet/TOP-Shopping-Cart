@@ -3,6 +3,7 @@ import Footer from "../Footer/Footer";
 import ShoppingCart from "../ShoppingCart/shoppingCart";
 import NavBar from "../navBar/navBar";
 import CheckoutCart from "./CheckoutCart/checkoutCart";
+import styles from "./checkoutPage.module.css"
 
 export default function CheckoutPage( {currentCartItems, onCartItemsChange})
 {
@@ -22,13 +23,15 @@ export default function CheckoutPage( {currentCartItems, onCartItemsChange})
     }
 
     return(
-        <div>
+        <div className={styles.wholePage}>
             <NavBar/>
-
+            <div className={styles.pageContainer}>
+            <div className={styles.mainArea}>
              <CheckoutCart
              itemToAdd={cartContents}
              onRemoveItem={(item) => handleRemoveItem(item)} />
-
+        </div>
+        </div>
             <Footer />
         </div>
     )

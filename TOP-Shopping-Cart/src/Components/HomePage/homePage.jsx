@@ -18,7 +18,15 @@ export default function HomePage({currentCartItems}){
 
             <div className={styles.pageContainer}>
                 <div className={styles.mainArea}>
-                    <HomePageTopDisplay />
+                    <HomePageTopDisplay
+                    headerText={"Newest Products"} />
+
+                    <HomePageTopDisplay
+                    headerText={"Other Products"} />
+                
+
+                <HomePageTopDisplay
+                    headerText={"More Products"} />
                 </div>
 
                 <div className={styles.sideArea}>

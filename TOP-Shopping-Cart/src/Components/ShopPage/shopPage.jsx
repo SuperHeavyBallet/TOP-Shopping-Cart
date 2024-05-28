@@ -57,10 +57,14 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
         <div className={styles.wholePage}>
 
             <NavBar />
-
+            
             <div className={styles.pageContainer}>
-
+            
                 <div className={styles.mainArea}>
+
+                    <h3 className={styles.shopHeadText}>Welcome To The Shop!</h3>
+                    
+                    <div className={styles.productDisplay}>
                 {
                     productsList.products.map((product) =>
                         <ProductItem
@@ -74,6 +78,7 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
                         />
                     )
                 }
+                </div>
                 </div>
                 <div className={styles.sideArea}>
 

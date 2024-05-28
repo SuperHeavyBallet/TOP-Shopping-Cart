@@ -9,6 +9,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     border-top: 2px solid black;
+    width: 100vw;
 }
 
 .footerSection{

@@ -2,19 +2,27 @@
     --background-color: rgb(204, 88, 88);
     --dark-accent-color: rgb(114, 39, 39);
     --light-accent-color: bisque;
+    --faint-light-accent-color: rgba(255, 228, 196, 0.315);
 }
 
 .wholeContainer{
     display: flex;
     flex-direction: column;
+    align-items: center;
+
+    padding-bottom: 3vh;
+    border-radius: 5px;
+    border: 1px dashed var(--faint-light-accent-color);
+
 }
 
 .homeHeader{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     color: var(--light-accent-color);
-
+    
 }
 
 .imagesContainer{
@@ -23,7 +31,7 @@
     border-radius: 5px;
     box-shadow: 2.5px 5px 1px black;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     max-width: 1000px;
     padding: 2vh 1vw;
 }

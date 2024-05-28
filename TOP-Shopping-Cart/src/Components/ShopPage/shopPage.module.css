@@ -2,12 +2,14 @@
     --background-color: rgb(204, 88, 88);
     --dark-accent-color: rgb(114, 39, 39);
     --light-accent-color: bisque;
+    --faint-light-accent-color: rgba(255, 228, 196, 0.315);
 }
 
 .wholePage{
     display: flex;
     flex-direction: column;
     height: 100%;
+    background-color: var(--dark-accent-color);
     
     
 }
@@ -17,19 +19,34 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr;
-    background-color: var(--dark-accent-color);
-    height: 95vh;
+    
+    min-height: 95vh;
   
+    transform: translateY(40px);
     
 }
 
 .mainArea{
     padding: 3vh 6vw;
+    
+    margin: 0 5vw;
+    
+   
+}
+
+.shopHeadText{
+    color: var(--light-accent-color);
+    text-align: center;
+}
+
+.productDisplay{
+    border-radius: 5px;
+    border: 1px dashed var(--faint-light-accent-color);
+
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1vh;
-    margin: 0 5vw;
-   
+    gap: 2vh;
+    padding: 2vh 2vw;
 }
 
 .sideArea{
@@ -38,5 +55,6 @@
     align-items: center;
   
     padding: 2vh 5vw;
+    
 
 }

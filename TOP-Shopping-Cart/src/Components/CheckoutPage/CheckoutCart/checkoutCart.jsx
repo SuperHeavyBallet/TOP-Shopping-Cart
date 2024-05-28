@@ -41,7 +41,7 @@ export default function CheckoutCart( {itemToAdd, onRemoveItem})
     }
     
     return(
-        <div>
+        <div className={styles.checkoutCart}>
             <h3>Shopping Cart</h3>
             {itemsInCart.map((item, index) => (
                 <ShoppingCartItem 

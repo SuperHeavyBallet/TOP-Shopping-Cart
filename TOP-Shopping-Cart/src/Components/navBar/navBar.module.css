@@ -10,10 +10,12 @@
     width: 100vw;
     background-color: var(--background-color);
     border-bottom: 2px solid black;
-    box-shadow: 2.5px 5px 1px black;
+  
     top: 0;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    z-index: 99;
     
 
 

@@ -18,3 +18,6 @@ TODO:
 - `Add Checkout Page`
 - CSS for Checkout Page
 - Create Shopping Cart version for Checkout Page
+- Fix navbar shadow being skewed on x axis
+- Confirm Remove
+- Fix page width overspilling

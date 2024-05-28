@@ -82,11 +82,12 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
                 </div>
                 <div className={styles.sideArea}>
 
+                <div className={styles.shoppingCartDisplay}>
                 <ShoppingCart 
                     itemToAdd={cartContents} 
                     onRemoveItem={(item) => handleRemoveItem(item)}
                 />
-         
+            </div>
                 </div>              
             </div>
 

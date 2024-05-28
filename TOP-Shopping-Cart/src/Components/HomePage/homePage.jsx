@@ -30,9 +30,12 @@ export default function HomePage({currentCartItems}){
                 </div>
 
                 <div className={styles.sideArea}>
+
+                    <div className={styles.shoppingCartDisplay}>
                 <ShoppingCart 
                 itemToAdd={cartContents}
                 isHomePage={true}/>
+                </div>
                 </div>
             </div>
 

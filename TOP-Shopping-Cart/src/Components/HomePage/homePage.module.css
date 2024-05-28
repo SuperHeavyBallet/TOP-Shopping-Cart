@@ -42,3 +42,13 @@
     padding: 2vh 5vw;
 
 }
+
+.shoppingCartDisplay{
+    border-radius: 5px;
+    border: 1px dashed var(--faint-light-accent-color);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2vh;
+    padding: 2vh 2vw;
+}

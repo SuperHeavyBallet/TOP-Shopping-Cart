@@ -2,6 +2,7 @@
     --background-color: rgb(204, 88, 88);
     --dark-accent-color: rgb(114, 39, 39);
     --light-accent-color: bisque;
+    --faint-light-accent-color: rgba(255, 228, 196, 0.315);
 }
 
 .shoppingCart{

@@ -1,10 +1,12 @@
 import NavBar from "../navBar/navBar";
 import ProductItem from "./ProductItem/productItem.jsx";
 import styles from "./shopPage.module.css"
-import productsList from "./productList.json"
+import productsList from "../ShopPage/productList.json"
 import ShoppingCart from "../ShoppingCart/shoppingCart.jsx";
 import { useEffect, useState } from "react";
 import Footer from "../Footer/Footer.jsx";
+import ColumnList from "../HomePage/ColumnList/columnList.jsx";
+
 
 export default function ShopPage( { currentCartItems, onCartItemsChange } )
 {
@@ -12,9 +14,12 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
 
     useEffect(() =>
     {
-        console.log("CONTENTS: ",cartContents);
         onCartItemsChange(cartContents);
     }, [cartContents, onCartItemsChange]);
+
+    const filterByGroup = (group) => {
+        return productsList.products.filter(product => product.groups.includes(group));
+    };
 
     function handleAddProductToCart(itemQuantity, productName, productPrice, productImage)
     {
@@ -59,6 +64,30 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
             <NavBar />
             
             <div className={styles.pageContainer}>
+
+            <div className={styles.leftArea}>
+                    
+
+            <div className={styles.columnList}>
+                        <ColumnList 
+                        inputTitle={"Groceries"}
+                        inputList={filterByGroup("groceries")}/>
+                    </div>
+
+                    <div className={styles.columnList}>
+                        
+                        <ColumnList 
+                        inputTitle={"Drinks"}
+                        inputList={filterByGroup("drinks")}/>
+                    </div>
+
+                    <div className={styles.columnList}>
+                        
+                        <ColumnList 
+                        inputTitle={"Meat"}
+                        inputList={filterByGroup("meat")}/>
+                    </div>
+                </div>
             
                 <div className={styles.mainArea}>
 

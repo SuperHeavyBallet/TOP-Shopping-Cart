@@ -20,8 +20,7 @@
 .leftSide{
     background-color: aliceblue;
     height: 100%;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
     max-height: 200px;
     border-radius: 5px 0 0 5px;
     
@@ -61,6 +60,7 @@
 
 .shoppingCartImage{
     height: 100%;
+    width: 100%;
 }
 
 .shoppingCartImage > img{

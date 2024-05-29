@@ -10,7 +10,7 @@ export default function NavBar()
     {
         if (location.pathname === "/")
         {
-            e.preventDefaul();
+            e.preventDefault();
         }
         else
         {
@@ -22,7 +22,7 @@ export default function NavBar()
     {
         if (location.pathname === "/shop")
         {
-            e.preventDefaul();
+            e.preventDefault();
         }
         else
         {

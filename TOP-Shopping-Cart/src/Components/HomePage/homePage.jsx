@@ -7,14 +7,28 @@ import HomePageTopDisplay from "./HomePageItems/homePageTopDisplay.jsx"
 import Footer from "../Footer/Footer.jsx"
 import ColumnList from "./ColumnList/columnList.jsx"
 import productList from "../ShopPage/productList.json"
+import HomePageDisplay from "./HomePageItems/homePageDisplay.jsx"
 
-export default function HomePage({currentCartItems}){
+export default function HomePage({currentCartItems, onCartItemsChange}){
 
     const [ cartContents, setCartContents ] = useState(currentCartItems);
 
+    useEffect(() =>
+    {
+        onCartItemsChange(cartContents);
+    }, [cartContents, onCartItemsChange]);
+
+    const filterByGroup = (group) => {
+        return productList.products.filter(product => product.groups.includes(group));
+    };
 
 
-    
+    function handleRemoveItem(item, key)
+    {
+        console.log(item);
+        const newCartContents = cartContents.filter(cartItem => cartItem[0] !== item[0]);
+        setCartContents(newCartContents);
+    }
 
     return(
         <div className={styles.wholePage}>
@@ -26,36 +40,60 @@ export default function HomePage({currentCartItems}){
 
                 <div className={styles.leftArea}>
                     
+
                     <div className={styles.columnList}>
-                        <h3>Groceries:</h3>
                         <ColumnList 
-                        inputList={productList.products.filter(product => product.group === "groceries")}/>
+                        inputTitle={"Groceries"}
+                        inputList={filterByGroup("groceries")}/>
                     </div>
 
                     <div className={styles.columnList}>
-                        <h3>Drinks:</h3>
+                        
                         <ColumnList 
-                        inputList={productList.products.filter(product => product.group === "drinks")}/>
+                        inputTitle={"Drinks"}
+                        inputList={filterByGroup("drinks")}/>
+                    </div>
+
+                    <div className={styles.columnList}>
+                        
+                        <ColumnList 
+                        inputTitle={"Meat"}
+                        inputList={filterByGroup("meat")}/>
                     </div>
                 </div>
                 <div className={styles.mainArea}>
                     <HomePageTopDisplay
                     headerText={"Newest Products"} />
 
-                    <HomePageTopDisplay
-                    headerText={"Other Products"} />
-                
+                    <HomePageDisplay 
+                    headerText={"Groceries"}
+                    inputArray={filterByGroup("groceries")}
+                    maxNumberDisplay={6}
+                    />
 
-                <HomePageTopDisplay
-                    headerText={"More Products"} />
+                    <HomePageDisplay 
+                    headerText={"Drinks"}
+                    inputArray={filterByGroup("drinks")}
+                    maxNumberDisplay={6}
+                    />
+
+                    <HomePageDisplay 
+                    headerText={"Meat"}
+                    inputArray={filterByGroup("meat")}
+                    maxNumberDisplay={6}
+                    />
                 </div>
+
+              
 
                 <div className={styles.sideArea}>
 
                     <div className={styles.shoppingCartDisplay}>
                 <ShoppingCart 
                 itemToAdd={cartContents}
-                isHomePage={true}/>
+                isHomePage={true}
+                onRemoveItem={(item) => handleRemoveItem(item)}/>
+                
                 </div>
                 </div>
             </div>

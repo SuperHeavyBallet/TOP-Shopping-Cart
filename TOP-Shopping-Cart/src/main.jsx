@@ -25,7 +25,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage 
-    currentCartItems={currentCartContents}
+    currentCartItems={currentCartContents} onCartItemsChange={handleCartItemsChange}
     />
   },
   {

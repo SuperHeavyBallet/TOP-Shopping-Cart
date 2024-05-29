@@ -22,7 +22,11 @@ export default function ShoppingCartItem( { itemImage, itemName, itemQuantity, i
 
     function handleRemoveItem()
     {
-        onRemoveItem();
+        if (window.confirm("Are you sure you want to remove this?"))
+        {
+            onRemoveItem();
+        }
+        
     }
 
 

@@ -17,19 +17,38 @@
 .pageContainer{
 
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 0.5fr 2fr 1fr;
     grid-template-rows: 1fr;
-    
+
     min-height: 95vh;
-  
     transform: translateY(40px);
+    margin: 1vh 1vw;
     
 }
 
+.leftArea{
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 1px dashed var(--faint-light-accent-color);
+    margin: 1vh 1vw;
+    padding: 1vh;
+    margin-bottom: 5vh;
+    width: 10vw;
+}
+
+
+.columnList > h3{
+    align-self: center;
+}
+
 .mainArea{
-    padding: 3vh 6vw;
-    
-    margin: 0 5vw;
+    margin: 1vh 1vw;
+    display: grid;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    margin-bottom: 5vh;
     
    
 }
@@ -37,6 +56,9 @@
 .shopHeadText{
     color: var(--light-accent-color);
     text-align: center;
+    margin: 0;
+    padding: 1vh 0;
+    height: fit-content;
 }
 
 .productDisplay{
@@ -44,20 +66,22 @@
     border: 1px dashed var(--faint-light-accent-color);
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 2vh;
     padding: 2vh 2vw;
+    margin-bottom: 5vh;
 }
 
 .sideArea{
     display: flex;
     flex-direction: column;
     align-items: center;
-  
-    padding: 2vh 5vw;
-    
+
+    margin: 1vh 1vw;
+    margin-bottom: 5vh;
 
 }
+
 .shoppingCartDisplay{
     border-radius: 5px;
     border: 1px dashed var(--faint-light-accent-color);

@@ -30,17 +30,12 @@
     border-radius: 5px;
     border: 1px dashed var(--faint-light-accent-color);
     margin: 1vh 1vw;
+    margin-bottom: 5vh;
+    padding: 1vh;
     width: 10vw;
 }
 
-.columnList{
-    background-color: var(--faint-light-accent-color);
-    color: var(--light-accent-color);
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    margin: 1vh 1vw;
-}
+
 
 .columnList > h3{
     align-self: center;
@@ -61,6 +56,7 @@
     align-items: center;
 
     margin: 1vh 1vw;
+    margin-bottom: 5vh;
 
 }
 

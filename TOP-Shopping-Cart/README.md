@@ -9,7 +9,7 @@ TODO:
 
 - `Add Shopping Cart "Total Price" Section`
 - `Update input to clear on submit`
-- Fix adding further amount of the same item not updating until something else triggers an update
+- `Fix adding further amount of the same item not updating until something else triggers an update`
 - `Reduce total to 2 decimal places`
 - `Add Home Page - show catalogue of a few images, make array of all product images/names from JSON file, pick 3 at random from that array to display on the front page - INSTEAD, latest 4 Entries in JSON to show newest additions`
 - fix CSS of shopping cart items
@@ -17,11 +17,13 @@ TODO:
 - `fix shop link when in shop moving to /shop/shop, an invalid link`
 - `Add Checkout Page`
 - CSS for Checkout Page
-- Create Shopping Cart version for Checkout Page
-- Fix navbar shadow being skewed on x axis
-- Confirm Remove
+- `Create Shopping Cart version for Checkout Page`
+- `Fix navbar shadow being skewed on x axis`
+- `Confirm Remove`
 - Fix page width overspilling
-- Add More Products
+- `Add More Products`
 - Make Home Page Products link to shop
-- Perhaps Categorise Products, add 'type' prop to each JSON entry and create sorting algorithm to output in sections
+- `Perhaps Categorise Products, add 'type' prop to each JSON entry and create sorting algorithm to output in sections`
 - Expand Footer Content
+- Organise shop product display into categories
+- Fix cart item images not being consistent size

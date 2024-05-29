@@ -5,25 +5,71 @@
             "id": 1,
             "name": "Bread",
             "price": "0.99",
-            "image": "src/Components/Images/image_bread.jpg"
+            "image": "src/Components/Images/image_bread.jpg",
+            "group": "groceries"
         },
         {
             "id": 2,
             "name": "Milk",
             "price": "1.99",
-            "image": "src/Components/Images/image_milk.jpg"
+            "image": "src/Components/Images/image_milk.jpg",
+            "group": "groceries"
         },
         {
             "id": 3,
             "name": "Potato",
             "price": "0.59",
-            "image": "src/Components/Images/image_potato.jpg"
+            "image": "src/Components/Images/image_potato.jpg",
+            "group": "groceries"
         },
         {
             "id": 4,
             "name": "Water",
             "price": "0.99",
-            "image": "src/Components/Images/image_water.png"
+            "image": "src/Components/Images/image_water.png",
+            "group": "drinks"
+        },
+        {
+            "id": 5,
+            "name": "Tea",
+            "price": "0.99",
+            "image": "src/Components/Images/image_water.png",
+            "group": "drinks"
+        },
+        {
+            "id": 6,
+            "name": "Coffee",
+            "price": "0.99",
+            "image": "src/Components/Images/image_water.png",
+            "group": "drinks"
+        },
+        {
+            "id": 7,
+            "name": "Coca Cola",
+            "price": "0.99",
+            "image": "src/Components/Images/image_water.png",
+            "group": "drinks"
+        },
+        {
+            "id": 8,
+            "name": "Pepsi",
+            "price": "0.99",
+            "image": "src/Components/Images/image_water.png",
+            "group": "drinks"
+        },
+        {
+            "id": 9,
+            "name": "Chicken",
+            "price": "3.99",
+            "image": "src/Components/Images/image_water.png",
+            "group": "groceries"
+        },
+        {
+            "id": 10,
+            "name": "Beef",
+            "price": "4.99",
+            "image": "src/Components/Images/image_water.png",
+            "group": "groceries"
         }
         
     ]       

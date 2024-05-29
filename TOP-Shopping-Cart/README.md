@@ -24,3 +24,4 @@ TODO:
 - Add More Products
 - Make Home Page Products link to shop
 - Perhaps Categorise Products, add 'type' prop to each JSON entry and create sorting algorithm to output in sections
+- Expand Footer Content

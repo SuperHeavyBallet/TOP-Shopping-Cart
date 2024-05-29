@@ -19,9 +19,9 @@ export default function HomePageTopDisplay({headerText})
 
 
         let chosenImages = [
-            inputArray[inputArray.length - 1], 
-            inputArray[inputArray.length - 2], 
-            inputArray[inputArray.length - 3],
+            inputArray[1], 
+            inputArray[2], 
+            inputArray[3],
         ];
 
         return chosenImages;

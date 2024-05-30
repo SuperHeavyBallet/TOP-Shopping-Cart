@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./shoppingCartItem.module.css"
 
-export default function ShoppingCartItem( { itemImage, itemName, itemQuantity, itemPrice, onRemoveItem, itemTotal})
+export default function ShoppingCartItem( { itemImage, itemName, itemQuantity, itemPrice, onRemoveItem, onAdjustItemQuantity})
 {
 
     useEffect(() =>
@@ -29,6 +29,18 @@ export default function ShoppingCartItem( { itemImage, itemName, itemQuantity, i
         
     }
 
+    function handleIncreaseQuantity()
+    {
+        
+        onAdjustItemQuantity("1");
+    }
+
+    function handleReduceQuantity()
+    {
+      
+        onAdjustItemQuantity("-1");
+    }
+
 
     return(
         <div className={styles.shoppingCartItem}>
@@ -44,6 +56,12 @@ export default function ShoppingCartItem( { itemImage, itemName, itemQuantity, i
                 </div>
                 <div className={styles.shoppingCartItemQuantityPrice}>
                     <div>x {itemQuantity}</div>
+                    <h3 onClick={() => handleIncreaseQuantity()}
+                        className={styles.adjustQuantityButton}
+                    >+</h3>
+                    <h3 onClick={() => handleReduceQuantity()}
+                        className={styles.adjustQuantityButton}
+                    >-</h3>
                 </div>
                 <div className={styles.shoppingCartItemTotalPrice}>Total: {totalItemPrice}</div>
                 <div 

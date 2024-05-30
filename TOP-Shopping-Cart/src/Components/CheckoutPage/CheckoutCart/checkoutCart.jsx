@@ -5,7 +5,7 @@ import ShoppingCartItem from "../../ShoppingCart/ShoppingCartItem/shoppingCartIt
 import { v4 as uuidv4 } from 'uuid'
 
 
-export default function CheckoutCart( {itemToAdd, onRemoveItem})
+export default function CheckoutCart( {itemToAdd, onRemoveItem, onAdjustItemQuantity})
 {
 
     const [ itemsInCart, setItemsInCart ] = useState([]);
@@ -35,6 +35,12 @@ export default function CheckoutCart( {itemToAdd, onRemoveItem})
         setTotal(newTotal);
     }
 
+    function handleAdjustItemQuantity(amountToAdjustBy, item)
+    {
+       //window.alert("Adjust " + item + " by: " + amountToAdjustBy); 
+       onAdjustItemQuantity(amountToAdjustBy, item);
+    }
+
     function handleGoToCheckoutClick(e)
     {
         window.alert("You Will Pay!");
@@ -53,6 +59,7 @@ export default function CheckoutCart( {itemToAdd, onRemoveItem})
                 itemImage={item[3]}
                 
                 onRemoveItem={() => handleRemoveItem(item)}
+                onAdjustItemQuantity={(amountToAdjustBy) => handleAdjustItemQuantity(amountToAdjustBy, item)}
                 
                 />
                 

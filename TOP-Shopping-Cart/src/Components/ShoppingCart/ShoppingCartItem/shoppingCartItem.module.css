@@ -50,6 +50,20 @@
 .shoppingCartItemQuantityPrice{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0
+}
+
+.adjustQuantityButton{
+    margin: 0 0.5vw;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0 0.5vw
+}
+
+.adjustQuantityButton:hover{
+    cursor: pointer;
 }
 
 .shoppingCartItemTotalPrice{

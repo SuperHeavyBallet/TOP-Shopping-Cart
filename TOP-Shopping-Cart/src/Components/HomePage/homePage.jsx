@@ -60,6 +60,13 @@ export default function HomePage({currentCartItems, onCartItemsChange}){
                         inputTitle={"Meat"}
                         inputList={filterByGroup("meat")}/>
                     </div>
+
+                    <div className={styles.columnList}>
+                        
+                        <ColumnList 
+                        inputTitle={"Vegetables & Salad"}
+                        inputList={filterByGroup("vegetables")}/>
+                    </div>
                 </div>
                 <div className={styles.mainArea}>
                     <HomePageTopDisplay

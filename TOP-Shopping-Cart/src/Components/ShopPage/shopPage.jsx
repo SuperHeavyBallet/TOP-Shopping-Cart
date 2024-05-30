@@ -59,6 +59,40 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
         setCartContents(newCartContents);
     }
 
+    function handleAdjustItemQuantity(amount, item)
+    {
+        //window.alert("Adjust " + item + " by: " + amount); 
+        for (let i = 0; i < cartContents.length; i++)
+        {
+            if(cartContents[i][0] === item[0])
+            {
+
+                    const tempArray = [...cartContents];
+                    const originalQuantity = tempArray[i][1];
+                    const newQuantity = Number(originalQuantity) + Number(amount);
+
+                    if (newQuantity > 0)
+                    {
+                        tempArray[i][1] = newQuantity;
+                    setCartContents(tempArray);
+                    }
+                    else
+                    {
+                        if (window.confirm("Remove Item?"))
+                        {
+                            handleRemoveItem(item);
+                        }
+                        
+                    }
+                    
+           
+               
+
+                
+            }
+        }
+    }
+
     return(
         <div className={styles.wholePage}>
 
@@ -87,6 +121,13 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
                         <ColumnList 
                         inputTitle={"Meat"}
                         inputList={filterByGroup("meat")}/>
+                    </div>
+
+                    <div className={styles.columnList}>
+                        
+                        <ColumnList 
+                        inputTitle={"Vegetables & Salad"}
+                        inputList={filterByGroup("vegetables")}/>
                     </div>
                 </div>
             
@@ -148,6 +189,8 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
                 <ShoppingCart 
                     itemToAdd={cartContents} 
                     onRemoveItem={(item) => handleRemoveItem(item)}
+                    onAdjustItemQuantity={(amount, item) => handleAdjustItemQuantity(amount, item)}
+                    
                 />
             </div>
                 </div>              

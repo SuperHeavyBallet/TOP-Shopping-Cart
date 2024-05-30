@@ -22,6 +22,40 @@ export default function CheckoutPage( {currentCartItems, onCartItemsChange})
 
     }
 
+    function handleAdjustItemQuantity(amount, item)
+    {
+        //window.alert("Adjust " + item + " by: " + amount); 
+        for (let i = 0; i < cartContents.length; i++)
+        {
+            if(cartContents[i][0] === item[0])
+            {
+
+                    const tempArray = [...cartContents];
+                    const originalQuantity = tempArray[i][1];
+                    const newQuantity = Number(originalQuantity) + Number(amount);
+
+                    if (newQuantity > 0)
+                    {
+                        tempArray[i][1] = newQuantity;
+                    setCartContents(tempArray);
+                    }
+                    else
+                    {
+                        if (window.confirm("Remove Item?"))
+                        {
+                            handleRemoveItem(item);
+                        }
+                        
+                    }
+                    
+           
+               
+
+                
+            }
+        }
+    }
+
     return(
         <div className={styles.wholePage}>
             <NavBar/>
@@ -29,7 +63,8 @@ export default function CheckoutPage( {currentCartItems, onCartItemsChange})
             <div className={styles.mainArea}>
              <CheckoutCart
              itemToAdd={cartContents}
-             onRemoveItem={(item) => handleRemoveItem(item)} />
+             onRemoveItem={(item) => handleRemoveItem(item)} 
+             onAdjustItemQuantity={(amount, item) => handleAdjustItemQuantity(amount, item)}/>
         </div>
         </div>
             <Footer />

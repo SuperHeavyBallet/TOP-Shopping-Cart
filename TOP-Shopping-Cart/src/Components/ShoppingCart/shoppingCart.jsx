@@ -5,7 +5,7 @@ import ShoppingCartItem from "./ShoppingCartItem/shoppingCartItem";
 import { v4 as uuidv4 } from 'uuid'
 import { key } from "localforage";
 
-export default function ShoppingCart( {itemToAdd, onRemoveItem, isHomePage })
+export default function ShoppingCart( {itemToAdd, onRemoveItem, onAdjustItemQuantity })
 {
     const [ itemsInCart, setItemsInCart ] = useState([]);
     const [ total, setTotal ] = useState(0);
@@ -49,12 +49,18 @@ export default function ShoppingCart( {itemToAdd, onRemoveItem, isHomePage })
         }
     }
 
+    function handleAdjustItemQuantity(amountToAdjustBy, item)
+    {
+       //window.alert("Adjust " + item + " by: " + amountToAdjustBy); 
+       onAdjustItemQuantity(amountToAdjustBy, item);
+    }
+
 
 
     return(
         <div className={styles.shoppingCart}>
             <h3>Shopping Cart</h3>
-            {itemsInCart.map((item, index) => (
+            {itemsInCart.map((item) => (
                 <ShoppingCartItem 
                 key={uuidv4()}
                 className={styles.cartItem}
@@ -64,6 +70,7 @@ export default function ShoppingCart( {itemToAdd, onRemoveItem, isHomePage })
                 itemImage={item[3]}
                 
                 onRemoveItem={() => handleRemoveItem(item)}
+                onAdjustItemQuantity={(amountToAdjustBy) => handleAdjustItemQuantity(amountToAdjustBy, item)}
                 
                 />
                 

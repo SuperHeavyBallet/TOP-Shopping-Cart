@@ -91,6 +91,27 @@
             "price": "1.99",
             "image": "src/Components/Images/image_pork.jpg",
             "groups": ["meat"]
+        },
+        {
+            "id": 14,
+            "name": "Cabbage",
+            "price": "0.59",
+            "image": "src/Components/Images/image_cabbage.png",
+            "groups": ["vegetables"]
+        },
+        {
+            "id": 15,
+            "name": "Lettuce",
+            "price": "0.59",
+            "image": "src/Components/Images/image_lettuce.jpg",
+            "groups": ["vegetables"]
+        },
+        {
+            "id": 16,
+            "name": "Tomato",
+            "price": "0.59",
+            "image": "src/Components/Images/image_tomato.jpg",
+            "groups": ["vegetables"]
         }
         
     ]       

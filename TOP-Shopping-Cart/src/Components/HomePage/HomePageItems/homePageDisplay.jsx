@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "./homepageTopDisplay.module.css"
+import styles from "./homePageDisplay.module.css"
 
 export default function HomePageDisplay({headerText, inputArray, maxNumberDisplay})
 {

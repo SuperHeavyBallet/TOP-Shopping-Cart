@@ -62,21 +62,21 @@
             "name": "Chicken",
             "price": "3.99",
             "image": "src/Components/Images/image_chicken.jpg",
-            "groups": ["groceries", "meat"]
+            "groups": ["meat"]
         },
         {
             "id": 10,
             "name": "Beef",
             "price": "4.99",
             "image": "src/Components/Images/image_beef.jpg",
-            "groups": ["groceries", "meat"]
+            "groups": ["meat"]
         },
         {
             "id": 11,
             "name": "Turkey",
             "price": "3.99",
             "image": "src/Components/Images/image_turkey.jpg",
-            "groups": ["groceries", "meat"]
+            "groups": ["meat"]
         },
         {
             "id": 12,
@@ -84,6 +84,13 @@
             "price": "1.99",
             "image": "src/Components/Images/image_sprite.jpg",
             "groups": ["drinks"]
+        },
+        {
+            "id": 13,
+            "name": "Pork",
+            "price": "1.99",
+            "image": "src/Components/Images/image_pork.jpg",
+            "groups": ["meat"]
         }
         
     ]       

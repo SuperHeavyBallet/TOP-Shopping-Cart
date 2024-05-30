@@ -26,12 +26,10 @@
 }
 
 .imagesContainer{
-    border: 2px solid black;
-    background-color: var(--light-accent-color);
-    border-radius: 5px;
-    box-shadow: 2.5px 5px 1px black;
+
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 2vh;
     max-width: 1000px;
     padding: 2vh 1vw;
 }

@@ -6,6 +6,7 @@ import ShoppingCart from "../ShoppingCart/shoppingCart.jsx";
 import { useEffect, useState } from "react";
 import Footer from "../Footer/Footer.jsx";
 import ColumnList from "../HomePage/ColumnList/columnList.jsx";
+import ProductGroup from "./productGroup/productGroup.jsx";
 
 
 export default function ShopPage( { currentCartItems, onCartItemsChange } )
@@ -93,8 +94,39 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
 
                     <h3 className={styles.shopHeadText}>Welcome To The Shop!</h3>
                     
+                    <div className={styles.productCategory}>
+
                     <div className={styles.productDisplay}>
-                {
+
+                        <ProductGroup 
+                            headerText={"Groceries"}
+                            inputArray={filterByGroup("groceries")}
+                            addProductToCart={(itemQuantity, productName, productPrice, productImage) => handleAddProductToCart(itemQuantity, productName, productPrice, productImage)}
+
+                        />
+
+                        <ProductGroup 
+                            headerText={"Drinks"}
+                            inputArray={filterByGroup("drinks")}
+                            addProductToCart={(itemQuantity, productName, productPrice, productImage) => handleAddProductToCart(itemQuantity, productName, productPrice, productImage)}
+
+                        />
+
+                        <ProductGroup 
+                            headerText={"Meat"}
+                            inputArray={filterByGroup("meat")}
+                            addProductToCart={(itemQuantity, productName, productPrice, productImage) => handleAddProductToCart(itemQuantity, productName, productPrice, productImage)}
+
+                        />
+
+                        <ProductGroup 
+                            headerText={"Vegetables & Salads"}
+                            inputArray={filterByGroup("vegetables")}
+                            addProductToCart={(itemQuantity, productName, productPrice, productImage) => handleAddProductToCart(itemQuantity, productName, productPrice, productImage)}
+
+                        />
+                        
+                {/*
                     productsList.products.map((product) =>
                         <ProductItem
                         
@@ -105,8 +137,9 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
                             
                             addProductToCart={(itemQuantity) => handleAddProductToCart(itemQuantity, product.name, product.price, product.image)}
                         />
-                    )
+                    )*/
                 }
+                </div>
                 </div>
                 </div>
                 <div className={styles.sideArea}>

@@ -31,3 +31,4 @@ TODO:
 - `Add + and - buttons to shopping cart item quantity to add or remove`
 - Make side menus link to shop page at specific section
 - Fix adjust quantity buttoms for checkout shopping cart
+- Fix cart item CSS for checkout page

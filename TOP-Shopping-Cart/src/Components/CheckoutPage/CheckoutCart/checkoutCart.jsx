@@ -72,7 +72,7 @@ export default function CheckoutCart( {itemToAdd, onRemoveItem, onAdjustItemQuan
 
                 <div className={styles.shoppingCartGoToCheckout}
                 onClick={handleGoToCheckoutClick}>
-                    <h3>Go to Checkout</h3>
+                    <h3>Pay Now</h3>
                 </div>
         </div>
     )

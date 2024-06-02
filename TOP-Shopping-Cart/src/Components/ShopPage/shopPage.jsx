@@ -106,28 +106,35 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
             <div className={styles.columnList}>
                         <ColumnList 
                         inputTitle={"Groceries"}
-                        inputList={filterByGroup("groceries")}/>
+                        inputList={filterByGroup("groceries")}
+                        linkTo="#groceries"
+                        />
+                        
                     </div>
 
                     <div className={styles.columnList}>
                         
                         <ColumnList 
                         inputTitle={"Drinks"}
-                        inputList={filterByGroup("drinks")}/>
+                        inputList={filterByGroup("drinks")}
+                        linkTo="#drinks"
+                        />
                     </div>
 
                     <div className={styles.columnList}>
                         
                         <ColumnList 
                         inputTitle={"Meat"}
-                        inputList={filterByGroup("meat")}/>
+                        inputList={filterByGroup("meat")}
+                        linkTo="#meat"/>
                     </div>
 
                     <div className={styles.columnList}>
                         
                         <ColumnList 
                         inputTitle={"Vegetables & Salad"}
-                        inputList={filterByGroup("vegetables")}/>
+                        inputList={filterByGroup("vegetables")}
+                        linkTo="#veg"/>
                     </div>
                 </div>
             
@@ -139,33 +146,41 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
 
                     <div className={styles.productDisplay}>
 
+                        <div id="groceries">
                         <ProductGroup 
                             headerText={"Groceries"}
                             inputArray={filterByGroup("groceries")}
                             addProductToCart={(itemQuantity, productName, productPrice, productImage) => handleAddProductToCart(itemQuantity, productName, productPrice, productImage)}
-
+                            id="groceries"
                         />
+                        </div>
 
+                        <div id="drinks">
                         <ProductGroup 
                             headerText={"Drinks"}
                             inputArray={filterByGroup("drinks")}
                             addProductToCart={(itemQuantity, productName, productPrice, productImage) => handleAddProductToCart(itemQuantity, productName, productPrice, productImage)}
-
+                            id="drinks"
                         />
+                        </div>
 
+                        <div id="meat">
                         <ProductGroup 
                             headerText={"Meat"}
                             inputArray={filterByGroup("meat")}
                             addProductToCart={(itemQuantity, productName, productPrice, productImage) => handleAddProductToCart(itemQuantity, productName, productPrice, productImage)}
-
+                            
                         />
+                        </div>
 
+                        <div id="veg">
                         <ProductGroup 
                             headerText={"Vegetables & Salads"}
                             inputArray={filterByGroup("vegetables")}
                             addProductToCart={(itemQuantity, productName, productPrice, productImage) => handleAddProductToCart(itemQuantity, productName, productPrice, productImage)}
-
+                            id="veg"
                         />
+                        </div>
                         
                 {/*
                     productsList.products.map((product) =>

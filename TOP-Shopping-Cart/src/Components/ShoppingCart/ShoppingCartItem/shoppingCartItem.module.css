@@ -21,7 +21,7 @@
 }
 
 .shoppingCartItem:hover{
-    transform: scale(102%);
+
 }
 
 .leftSide{
@@ -73,6 +73,9 @@
 .shoppingCartItemQuantityPrice > h3{
     margin: 0;
     padding: 0;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
 }
 
 .quantityDisplay{

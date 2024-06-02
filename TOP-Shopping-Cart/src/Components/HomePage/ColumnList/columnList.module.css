@@ -15,7 +15,21 @@
     margin: 1vh 1vw;
 }
 
-.columnList > h3{
+.columnList a{
+    list-style: none;
+}
+
+
+.columnList a:hover{
+    color: var(--light-accent-color);
+}
+
+.columnList:hover{
+    cursor: pointer;
+    transform: scale(102%);
+}
+
+.columnList h3{
     text-align: center;
     align-self: center;
     padding: 0;

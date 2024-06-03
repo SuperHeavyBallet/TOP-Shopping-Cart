@@ -55,11 +55,11 @@ export default function ShoppingCartItem( { itemImage, itemName, itemQuantity, i
                     <h4> ${itemPrice}</h4>
                 </div>
                 <div className={styles.shoppingCartItemQuantityPrice}>
-                    <h3 onClick={() => handleReduceQuantity()}
+                    <h3 onClick={handleReduceQuantity}
                         className={styles.adjustQuantityButton}
                     >-</h3>
                     <div className={styles.quantityDisplay}>x {itemQuantity}</div>
-                    <h3 onClick={() => handleIncreaseQuantity()}
+                    <h3 onClick={handleIncreaseQuantity}
                         className={styles.adjustQuantityButton}
                     >+</h3>
                     

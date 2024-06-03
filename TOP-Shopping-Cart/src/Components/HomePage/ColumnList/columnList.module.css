@@ -17,6 +17,12 @@
 
 .columnList a{
     list-style: none;
+    color: inherit;
+}
+
+.columnList a:visited{
+    list-style: none;
+    color: inherit;
 }
 
 

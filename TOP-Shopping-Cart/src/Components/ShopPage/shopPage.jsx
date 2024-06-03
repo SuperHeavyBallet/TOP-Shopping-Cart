@@ -7,11 +7,15 @@ import { useEffect, useState } from "react";
 import Footer from "../Footer/Footer.jsx";
 import ColumnList from "../HomePage/ColumnList/columnList.jsx";
 import ProductGroup from "./productGroup/productGroup.jsx";
+import { useLocation } from "react-router-dom";
 
 
 export default function ShopPage( { currentCartItems, onCartItemsChange } )
 {
     const [ cartContents, setCartContents ] = useState(currentCartItems);
+    const location = useLocation();
+    const [currentItemsToDisplay, setCurrentItemsToDisplay] = useState(location.state?.displayGroup || ["groceries", "Groceries"]);
+    console.log("Incoming: ",currentItemsToDisplay);
 
     useEffect(() =>
     {
@@ -90,111 +94,101 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
 
                 
             }
+
+            
         }
+
+        
+    }
+
+    function handleSwitchDisplay(displayGroup)
+    {
+        setCurrentItemsToDisplay(displayGroup);
+        
     }
 
     return(
         <div className={styles.wholePage}>
 
             <NavBar />
+
+            <div className={styles.goToTop}>
+                <a href="#top">Go To Top</a></div>
             
             <div className={styles.pageContainer}>
 
+          
+                
             <div className={styles.leftArea}>
                     
-
-            <div className={styles.columnList}>
+            
+            <div className={styles.columnList}
+            onClick={() => handleSwitchDisplay(["groceries", "Groceries"])}>
                         <ColumnList 
                         inputTitle={"Groceries"}
                         inputList={filterByGroup("groceries")}
-                        linkTo="#groceries"
+                        
+                        
+                        
                         />
                         
                     </div>
 
-                    <div className={styles.columnList}>
+                    <div className={styles.columnList}
+                    onClick={() => handleSwitchDisplay(["drinks", "Drinks"])}>
                         
                         <ColumnList 
                         inputTitle={"Drinks"}
                         inputList={filterByGroup("drinks")}
-                        linkTo="#drinks"
+                        
+                        
                         />
                     </div>
 
-                    <div className={styles.columnList}>
+                    <div className={styles.columnList}
+                    onClick={() => handleSwitchDisplay(["meat", "Meat"])}>
                         
                         <ColumnList 
                         inputTitle={"Meat"}
                         inputList={filterByGroup("meat")}
-                        linkTo="#meat"/>
+                        />
                     </div>
 
-                    <div className={styles.columnList}>
+                    <div className={styles.columnList}
+                    onClick={() => handleSwitchDisplay(["vegetables", "Vegetables & Salads"])}>
                         
                         <ColumnList 
                         inputTitle={"Vegetables & Salad"}
                         inputList={filterByGroup("vegetables")}
-                        linkTo="#veg"/>
+                        />
                     </div>
                 </div>
             
                 <div className={styles.mainArea}>
 
-                    <h3 className={styles.shopHeadText}>Welcome To The Shop!</h3>
+                    <h3 id="top" className={styles.shopHeadText}>Welcome To The Shop!</h3>
                     
                     <div className={styles.productCategory}>
 
                     <div className={styles.productDisplay}>
 
+                        
                         <div id="groceries">
                         <ProductGroup 
-                            headerText={"Groceries"}
-                            inputArray={filterByGroup("groceries")}
-                            addProductToCart={(itemQuantity, productName, productPrice, productImage) => handleAddProductToCart(itemQuantity, productName, productPrice, productImage)}
-                            id="groceries"
-                        />
-                        </div>
-
-                        <div id="drinks">
-                        <ProductGroup 
-                            headerText={"Drinks"}
-                            inputArray={filterByGroup("drinks")}
-                            addProductToCart={(itemQuantity, productName, productPrice, productImage) => handleAddProductToCart(itemQuantity, productName, productPrice, productImage)}
-                            id="drinks"
-                        />
-                        </div>
-
-                        <div id="meat">
-                        <ProductGroup 
-                            headerText={"Meat"}
-                            inputArray={filterByGroup("meat")}
+                            headerText={currentItemsToDisplay[1]}
+                            inputArray={filterByGroup(currentItemsToDisplay[0])}
                             addProductToCart={(itemQuantity, productName, productPrice, productImage) => handleAddProductToCart(itemQuantity, productName, productPrice, productImage)}
                             
                         />
                         </div>
+        
+                     
 
-                        <div id="veg">
-                        <ProductGroup 
-                            headerText={"Vegetables & Salads"}
-                            inputArray={filterByGroup("vegetables")}
-                            addProductToCart={(itemQuantity, productName, productPrice, productImage) => handleAddProductToCart(itemQuantity, productName, productPrice, productImage)}
-                            id="veg"
-                        />
-                        </div>
                         
-                {/*
-                    productsList.products.map((product) =>
-                        <ProductItem
+
+                      
                         
-                            key={product.id}
-                            productImage={product.image}
-                            productName={product.name}
-                            productPrice={product.price}
-                            
-                            addProductToCart={(itemQuantity) => handleAddProductToCart(itemQuantity, product.name, product.price, product.image)}
-                        />
-                    )*/
-                }
+              
                 </div>
                 </div>
                 </div>

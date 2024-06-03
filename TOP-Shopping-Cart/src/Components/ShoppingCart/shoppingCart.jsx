@@ -41,7 +41,7 @@ export default function ShoppingCart( {itemToAdd, onRemoveItem, onAdjustItemQuan
     {
         if (location.pathname === "/checkout")
         {
-            e.preventDefaul();
+            e.preventDefault();
         }
         else
         {

@@ -8,6 +8,7 @@ import Footer from "../Footer/Footer.jsx"
 import ColumnList from "./ColumnList/columnList.jsx"
 import productList from "../ShopPage/productList.json"
 import HomePageDisplay from "./HomePageItems/homePageDisplay.jsx"
+import { Link } from "react-router-dom";
 
 export default function HomePage({currentCartItems, onCartItemsChange}){
 
@@ -68,6 +69,9 @@ export default function HomePage({currentCartItems, onCartItemsChange}){
         <div className={styles.wholePage}>
 
             <NavBar />
+
+            <div className={styles.goToTop}>
+                <a href="#top">Go To Top</a></div>
             
 
             <div className={styles.pageContainer}>
@@ -76,54 +80,77 @@ export default function HomePage({currentCartItems, onCartItemsChange}){
                     
 
                     <div className={styles.columnList}>
+                    <Link to={{ pathname: "/shop", state: { displayGroup: ["groceries", "Groceries"] } }}>
                         <ColumnList 
                         inputTitle={"Groceries"}
-                        inputList={filterByGroup("groceries")}/>
+                        inputList={filterByGroup("groceries")}
+                        linkTo="#groceries"
+                        />
+                        </Link>
                     </div>
+                    
 
                     <div className={styles.columnList}>
-                        
+                    <Link to={{ pathname: "/shop", state: { displayGroup: ["drinks", "Drinks"] } }}>
                         <ColumnList 
                         inputTitle={"Drinks"}
-                        inputList={filterByGroup("drinks")}/>
+                        inputList={filterByGroup("drinks")}
+                        linkTo="#drinks"
+                        />
+                        </Link>
                     </div>
 
                     <div className={styles.columnList}>
                         
                         <ColumnList 
                         inputTitle={"Meat"}
-                        inputList={filterByGroup("meat")}/>
+                        inputList={filterByGroup("meat")}
+                        linkTo="#meat"/>
                     </div>
 
                     <div className={styles.columnList}>
                         
                         <ColumnList 
                         inputTitle={"Vegetables & Salad"}
-                        inputList={filterByGroup("vegetables")}/>
+                        inputList={filterByGroup("vegetables")}
+                        linkTo="#veg"/>
                     </div>
                 </div>
                 <div className={styles.mainArea}>
                     <HomePageTopDisplay
                     headerText={"Newest Products"} />
 
+                <div id="groceries">
                     <HomePageDisplay 
                     headerText={"Groceries"}
                     inputArray={filterByGroup("groceries")}
                     maxNumberDisplay={6}
                     />
-
+                </div>
+                <div id="drinks">
                     <HomePageDisplay 
                     headerText={"Drinks"}
                     inputArray={filterByGroup("drinks")}
                     maxNumberDisplay={6}
                     />
+                </div>
 
+                <div id="meat">
                     <HomePageDisplay 
                     headerText={"Meat"}
                     inputArray={filterByGroup("meat")}
                     maxNumberDisplay={6}
                     />
                 </div>
+                <div id="veg">
+                    <HomePageDisplay 
+                    headerText={"Vegetables"}
+                    inputArray={filterByGroup("vegetables")}
+                    maxNumberDisplay={6}
+                    />
+                </div>
+                </div>
+
 
               
 

@@ -43,13 +43,20 @@
     text-align: center;
     position: fixed;
     z-index: 1000;
-   bottom: 40px;
+   bottom: 70px;
     left: 100px;
     background-color: var(--light-accent-color);
     padding: 0.5vw;
     border-radius: 5px;
     border: 2px solid black;
+    color: black;
+    
 
+}
+
+
+.goToTop:visited{
+    color: black;
 }
 
 

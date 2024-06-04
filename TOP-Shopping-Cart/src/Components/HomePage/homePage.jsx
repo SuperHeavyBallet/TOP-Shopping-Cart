@@ -2,7 +2,7 @@ import NavBar from "../navBar/navBar.jsx"
 import PageContainer from "./PageContainer/pageContainer.jsx"
 import styles from "./homePage.module.css"
 import ShoppingCart from "../ShoppingCart/shoppingCart.jsx"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import HomePageTopDisplay from "./HomePageItems/homePageTopDisplay.jsx"
 import Footer from "../Footer/Footer.jsx"
 import ColumnList from "./ColumnList/columnList.jsx"
@@ -14,6 +14,9 @@ export default function HomePage({currentCartItems, onCartItemsChange}){
 
     const [ cartContents, setCartContents ] = useState(currentCartItems);
 
+    //For Return to top element visibility
+    const [ isVisible, setIsVisible ] = useState(false);
+
     useEffect(() =>
     {
         onCartItemsChange(cartContents);
@@ -23,6 +26,39 @@ export default function HomePage({currentCartItems, onCartItemsChange}){
         return productList.products.filter(product => product.groups.includes(group));
     };
 
+  
+
+    const observedElementRef = useRef(null);
+    const targetElementRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(false);
+                    console.log("Visibility: FALSE");
+                } else {
+                    setIsVisible(true);
+                    console.log("Visibility: TRUE");
+                }
+            },
+            {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            }
+        );
+
+        if (observedElementRef.current) {
+            observer.observe(observedElementRef.current);
+        }
+
+        return () => {
+            if (observedElementRef.current) {
+                observer.unobserve(observedElementRef.current);
+            }
+        };
+    }, [observedElementRef, targetElementRef]);
 
     function handleRemoveItem(item, key)
     {
@@ -65,22 +101,27 @@ export default function HomePage({currentCartItems, onCartItemsChange}){
         }
     }
 
+
     return(
         <div className={styles.wholePage}>
 
             <NavBar />
 
-            <div className={styles.goToTop}>
-                <a href="#top">Go To Top</a></div>
+            {   isVisible &&
+            <a href="#top" className={styles.goToTop}>
+                <div ref={targetElementRef} >
+                    Go To Top
+                </div>
+                </a>
+            }
             
-
             <div className={styles.pageContainer}>
 
                 <div className={styles.leftArea}>
                     
 
                     <div className={styles.columnList}>
-                    <Link to={{ pathname: "/shop", state: { displayGroup: ["groceries", "Groceries"] } }}>
+                    <Link to="shop" state={{displayGroup: ["groceries", "Groceries"]}}>
                         <ColumnList 
                         inputTitle={"Groceries"}
                         inputList={filterByGroup("groceries")}
@@ -88,10 +129,12 @@ export default function HomePage({currentCartItems, onCartItemsChange}){
                         />
                         </Link>
                     </div>
+
+                    
                     
 
                     <div className={styles.columnList}>
-                    <Link to={{ pathname: "/shop", state: { displayGroup: ["drinks", "Drinks"] } }}>
+                    <Link to="shop" state={{displayGroup: ["drinks", "Drinks"]}}>
                         <ColumnList 
                         inputTitle={"Drinks"}
                         inputList={filterByGroup("drinks")}
@@ -100,21 +143,31 @@ export default function HomePage({currentCartItems, onCartItemsChange}){
                         </Link>
                     </div>
 
+                    
+
                     <div className={styles.columnList}>
+                    <Link to="shop" state={{displayGroup: ["meat", "Meat"]}}>
                         
                         <ColumnList 
                         inputTitle={"Meat"}
                         inputList={filterByGroup("meat")}
                         linkTo="#meat"/>
+                         </Link>
                     </div>
+                   
 
-                    <div className={styles.columnList}>
-                        
+                    <div 
+                     
+                    
+                    className={styles.columnList}>
+                    <Link to="shop" state={{displayGroup: ["vegetables", "Vegetables & Salads"]}}>
                         <ColumnList 
                         inputTitle={"Vegetables & Salad"}
                         inputList={filterByGroup("vegetables")}
                         linkTo="#veg"/>
+                         </Link>
                     </div>
+                   
                 </div>
                 <div className={styles.mainArea}>
                     <HomePageTopDisplay

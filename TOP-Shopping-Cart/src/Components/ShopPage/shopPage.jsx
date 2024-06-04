@@ -3,7 +3,7 @@ import ProductItem from "./ProductItem/productItem.jsx";
 import styles from "./shopPage.module.css"
 import productsList from "../ShopPage/productList.json"
 import ShoppingCart from "../ShoppingCart/shoppingCart.jsx";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Footer from "../Footer/Footer.jsx";
 import ColumnList from "../HomePage/ColumnList/columnList.jsx";
 import ProductGroup from "./productGroup/productGroup.jsx";
@@ -14,8 +14,12 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
 {
     const [ cartContents, setCartContents ] = useState(currentCartItems);
     const location = useLocation();
+    const displayGroup = location.state?.displayGroup;
+    
     const [currentItemsToDisplay, setCurrentItemsToDisplay] = useState(location.state?.displayGroup || ["groceries", "Groceries"]);
-    console.log("Incoming: ",currentItemsToDisplay);
+    
+    //For Return to top element visibility
+    const [ isVisible, setIsVisible ] = useState(false);
 
     useEffect(() =>
     {
@@ -55,6 +59,38 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
 
         
     }
+
+    const observedElementRef = useRef(null);
+    const targetElementRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(false);
+                    console.log("Visibility: FALSE");
+                } else {
+                    setIsVisible(true);
+                    console.log("Visibility: TRUE");
+                }
+            },
+            {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            }
+        );
+
+        if (observedElementRef.current) {
+            observer.observe(observedElementRef.current);
+        }
+
+        return () => {
+            if (observedElementRef.current) {
+                observer.unobserve(observedElementRef.current);
+            }
+        };
+    }, [observedElementRef, targetElementRef]);
 
     function handleRemoveItem(item, key)
     {
@@ -112,8 +148,13 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
 
             <NavBar />
 
-            <div className={styles.goToTop}>
-                <a href="#top">Go To Top</a></div>
+            {   isVisible &&
+            <a href="#top" className={styles.goToTop}>
+                <div ref={targetElementRef} >
+                    Go To Top
+                </div>
+                </a>
+            }
             
             <div className={styles.pageContainer}>
 
@@ -132,6 +173,10 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
                         
                         />
                         
+                    </div>
+
+                    <div  /* Hidden Div to serve as contact point for 'GO TO TOP' to hide/display*/
+                        ref={observedElementRef}>
                     </div>
 
                     <div className={styles.columnList}

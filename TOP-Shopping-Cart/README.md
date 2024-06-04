@@ -22,18 +22,19 @@ TODO:
 - `Confirm Remove`
 - Fix page width overspilling
 - `Add More Products`
-- Make Home Page Products link to shop
+- `Make Home Page Products link to shop`
 - `Perhaps Categorise Products, add 'type' prop to each JSON entry and create sorting algorithm to output in sections`
 - Expand Footer Content
 - `Organise shop product display into categories`
 - Fix cart item images not being consistent size
 - `Add  more Products`
 - `Add + and - buttons to shopping cart item quantity to add or remove`
-- Make side menus link to shop page at specific section
-- Fix adjust quantity buttoms for checkout shopping cart
+- `Make side menus link to shop page at specific section`
+- `Fix adjust quantity buttoms for checkout shopping cart`
 - `Fix cart item CSS for checkout page`
 - `Bring Go to Top to bottom`
 - `Rework shop page to only display the products selected in the menu, rather than filling the page with everything in groups (Think Amazon, reload product component)`
 - fix position moving offset
-- Hide Go To Top if at top
-- Set Homepage Products in sections to link to shop page with that product group loaded in display
+- `Hide Go To Top if at top`
+- `Set Homepage Products in sections to link to shop page with that product group loaded in display`
+- Write Documentation

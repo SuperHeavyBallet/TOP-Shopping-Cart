@@ -2,12 +2,22 @@
     --background-color: rgb(204, 88, 88);
     --dark-accent-color: rgb(114, 39, 39);
     --light-accent-color: bisque;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .wholePage{
     display: flex;
     flex-direction: column;
     height: 100%;
+    width: 100vw;
     background-color: var(--dark-accent-color);
     
     
@@ -22,6 +32,7 @@
     min-height: 95vh;
     transform: translateY(40px);
     margin: 1vh 1vw;
+    overflow-x: hidden; /* Ensure no horizontal overflow */
 }
 
 .leftArea{
@@ -61,9 +72,8 @@
 
 
 
-.columnList > h3{
-    align-self: center;
-}
+
+
 .mainArea{
     margin: 1vh 1vw;
     display: grid;

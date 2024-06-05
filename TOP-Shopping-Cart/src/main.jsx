@@ -12,6 +12,7 @@ import ShopPage from './Components/ShopPage/shopPage.jsx'
 import ShoppingCart from './Components/ShoppingCart/shoppingCart.jsx'
 import CheckoutPage from './Components/CheckoutPage/checkoutPage.jsx'
 
+
 function Main()
 {
 const [currentCartContents, setCurrentCartContents] = useState([]);
@@ -43,7 +44,8 @@ const router = createBrowserRouter([
 ])
 
 return (
-  <RouterProvider router={router} />
+  <RouterProvider
+  router={router} />
 );
 
 }
@@ -52,7 +54,7 @@ return (
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Main />
+    <Main   />
 
   </React.StrictMode>,
 )

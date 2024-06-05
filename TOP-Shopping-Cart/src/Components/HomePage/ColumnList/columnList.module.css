@@ -13,6 +13,7 @@
     flex-direction: column;
 
     margin: 1vh 1vw;
+    padding-bottom: 1vh;
 }
 
 .columnList a{
@@ -45,6 +46,7 @@
 .listElement{
     align-self: flex-start;
    list-style: circle;
+   margin: 0 2vw;
 }
 
 .listElement:first-of-type{

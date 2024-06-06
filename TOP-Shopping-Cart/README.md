@@ -38,3 +38,4 @@ TODO:
 - `Hide Go To Top if at top`
 - `Set Homepage Products in sections to link to shop page with that product group loaded in display`
 - Write Documentation
+- Deploy on Netlify - Possible directories hidden

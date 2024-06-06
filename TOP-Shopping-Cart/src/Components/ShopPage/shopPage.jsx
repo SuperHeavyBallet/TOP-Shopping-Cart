@@ -10,8 +10,11 @@ import ProductGroup from "./productGroup/productGroup.jsx";
 import { useLocation } from "react-router-dom";
 
 
+
 export default function ShopPage( { currentCartItems, onCartItemsChange } )
 {
+    
+
     const [ cartContents, setCartContents ] = useState(currentCartItems);
     const location = useLocation();
     const displayGroup = location.state?.displayGroup;
@@ -140,6 +143,7 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
     function handleSwitchDisplay(displayGroup)
     {
         setCurrentItemsToDisplay(displayGroup);
+        window.scrollTo(0, 0);
         
     }
 
@@ -218,7 +222,7 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
                     <div className={styles.productDisplay}>
 
                         
-                        <div id="groceries">
+                        <div>
                         <ProductGroup 
                             headerText={currentItemsToDisplay[1]}
                             inputArray={filterByGroup(currentItemsToDisplay[0])}
@@ -253,6 +257,7 @@ export default function ShopPage( { currentCartItems, onCartItemsChange } )
             <div>
                 <Footer />
             </div>
+
 
         </div>
     )

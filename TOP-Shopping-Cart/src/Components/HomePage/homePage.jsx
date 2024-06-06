@@ -10,7 +10,9 @@ import productList from "../ShopPage/productList.json"
 import HomePageDisplay from "./HomePageItems/homePageDisplay.jsx"
 import { Link } from "react-router-dom";
 
+
 export default function HomePage({currentCartItems, onCartItemsChange}){
+
 
     const [ cartContents, setCartContents ] = useState(currentCartItems);
 
@@ -130,7 +132,8 @@ export default function HomePage({currentCartItems, onCartItemsChange}){
                         </Link>
                     </div>
 
-                    
+                    {/* Empty div to trigger Go To Top button displaying */}
+                    <div ref={observedElementRef}></div>
                     
 
                     <div className={styles.columnList}>
@@ -143,6 +146,7 @@ export default function HomePage({currentCartItems, onCartItemsChange}){
                         </Link>
                     </div>
 
+                    
                     
 
                     <div className={styles.columnList}>
@@ -169,10 +173,14 @@ export default function HomePage({currentCartItems, onCartItemsChange}){
                     </div>
                    
                 </div>
+
                 <div className={styles.mainArea}>
+                <Link to="shop">
                     <HomePageTopDisplay
                     headerText={"Newest Products"} />
+                </Link>
 
+                <Link to="shop" state={{displayGroup: ["groceries", "Groceries"]}}>
                 <div id="groceries">
                     <HomePageDisplay 
                     headerText={"Groceries"}
@@ -180,6 +188,10 @@ export default function HomePage({currentCartItems, onCartItemsChange}){
                     maxNumberDisplay={6}
                     />
                 </div>
+                </Link>
+              
+
+                <Link to="shop" state={{displayGroup: ["drinks", "Drinks"]}}>
                 <div id="drinks">
                     <HomePageDisplay 
                     headerText={"Drinks"}
@@ -187,7 +199,9 @@ export default function HomePage({currentCartItems, onCartItemsChange}){
                     maxNumberDisplay={6}
                     />
                 </div>
+                </Link>
 
+                <Link to="shop" state={{displayGroup: ["meat", "Meat"]}}>
                 <div id="meat">
                     <HomePageDisplay 
                     headerText={"Meat"}
@@ -195,6 +209,9 @@ export default function HomePage({currentCartItems, onCartItemsChange}){
                     maxNumberDisplay={6}
                     />
                 </div>
+                </Link>
+
+                <Link to="shop" state={{displayGroup: ["vegetables", "Vegetables & Salads"]}}>
                 <div id="veg">
                     <HomePageDisplay 
                     headerText={"Vegetables"}
@@ -202,6 +219,7 @@ export default function HomePage({currentCartItems, onCartItemsChange}){
                     maxNumberDisplay={6}
                     />
                 </div>
+                </Link>
                 </div>
 
 
@@ -224,6 +242,8 @@ export default function HomePage({currentCartItems, onCartItemsChange}){
             <div>
                 <Footer />
             </div>
+
+       
         </div>
     )
 }

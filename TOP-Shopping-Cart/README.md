@@ -5,28 +5,28 @@ TODO:
 - `Check ID's remain unique after altering DOM`
 - `Fix setCartContents(tempArray) not updating DOM until something else triggers the update`
 - `Add Simple CSS positioning`
-- `Add Shopping Cart Header always present`, click to expand
+- `Add Shopping Cart Header always present`, `click to expand`
 
 - `Add Shopping Cart "Total Price" Section`
 - `Update input to clear on submit`
 - `Fix adding further amount of the same item not updating until something else triggers an update`
 - `Reduce total to 2 decimal places`
 - `Add Home Page - show catalogue of a few images, make array of all product images/names from JSON file, pick 3 at random from that array to display on the front page - INSTEAD, latest 4 Entries in JSON to show newest additions`
-- fix CSS of shopping cart items
+- `fix CSS of shopping cart items`
 - `Add Shopping Cart 'Go To Checkout' Section`
 - `fix shop link when in shop moving to /shop/shop, an invalid link`
 - `Add Checkout Page`
-- CSS for Checkout Page
+- `CSS for Checkout Page`
 - `Create Shopping Cart version for Checkout Page`
 - `Fix navbar shadow being skewed on x axis`
 - `Confirm Remove`
-- Fix page width overspilling
+- `Fix page width overspilling`
 - `Add More Products`
 - `Make Home Page Products link to shop`
 - `Perhaps Categorise Products, add 'type' prop to each JSON entry and create sorting algorithm to output in sections`
-- Expand Footer Content
+- `Expand Footer Content`
 - `Organise shop product display into categories`
-- Fix cart item images not being consistent size
+- `Fix cart item images not being consistent size`
 - `Add  more Products`
 - `Add + and - buttons to shopping cart item quantity to add or remove`
 - `Make side menus link to shop page at specific section`
@@ -34,7 +34,7 @@ TODO:
 - `Fix cart item CSS for checkout page`
 - `Bring Go to Top to bottom`
 - `Rework shop page to only display the products selected in the menu, rather than filling the page with everything in groups (Think Amazon, reload product component)`
-- fix position moving offset
+- `fix position moving offset`
 - `Hide Go To Top if at top`
 - `Set Homepage Products in sections to link to shop page with that product group loaded in display`
 - Write Documentation

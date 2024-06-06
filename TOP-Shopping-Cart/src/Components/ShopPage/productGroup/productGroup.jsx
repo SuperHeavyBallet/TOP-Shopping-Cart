@@ -4,6 +4,8 @@ import ProductItem from "../ProductItem/productItem.jsx";
 
 export default function ProductGroup({headerText, inputArray, maxNumberDisplay, addProductToCart})
 {
+
+
     let arrayOfProducts = [];
     if (maxNumberDisplay)
     {

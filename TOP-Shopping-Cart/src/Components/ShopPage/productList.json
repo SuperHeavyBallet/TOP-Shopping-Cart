@@ -5,112 +5,112 @@
             "id": 1,
             "name": "Bread",
             "price": "0.99",
-            "image": "/public/Images/image_bread.jpg",
+            "image": "/Images/image_bread.jpg",
             "groups": ["groceries", "bread"]
         },
         {
             "id": 2,
             "name": "Milk",
             "price": "1.99",
-            "image": "/public/Images/image_milk.jpg",
+            "image": "/Images/image_milk.jpg",
             "groups": ["groceries", "dairy"]
         },
         {
             "id": 3,
             "name": "Potato",
             "price": "0.59",
-            "image": "/public/Images/image_potato.jpg",
+            "image": "/Images/image_potato.jpg",
             "groups": ["groceries", "dairy"]
         },
         {
             "id": 4,
             "name": "Water",
             "price": "0.99",
-            "image": "/public/Images/image_water.png",
+            "image": "/Images/image_water.png",
             "groups": ["groceries", "drinks"]
         },
         {
             "id": 5,
             "name": "Tea",
             "price": "0.99",
-            "image": "/public/Images/image_tea.jpg",
+            "image": "/Images/image_tea.jpg",
             "groups": ["groceries", "drinks"]
         },
         {
             "id": 6,
             "name": "Coffee",
             "price": "0.99",
-            "image": "/public/Images/image_coffee.jpg",
+            "image": "/Images/image_coffee.jpg",
             "groups": ["groceries", "drinks"]
         },
         {
             "id": 7,
             "name": "Coca Cola",
             "price": "0.99",
-            "image": "/public/Images/image_cocaCola.jpg",
+            "image": "/Images/image_cocaCola.jpg",
             "groups": ["drinks"]
         },
         {
             "id": 8,
             "name": "Pepsi",
             "price": "0.99",
-            "image": "/public/Images/image_pepsi.jpg",
+            "image": "/Images/image_pepsi.jpg",
             "groups": ["drinks"]
         },
         {
             "id": 9,
             "name": "Chicken",
             "price": "3.99",
-            "image": "/public/Images/image_chicken.jpg",
+            "image": "/Images/image_chicken.jpg",
             "groups": ["meat"]
         },
         {
             "id": 10,
             "name": "Beef",
             "price": "4.99",
-            "image": "/public/Images/image_beef.jpg",
+            "image": "/Images/image_beef.jpg",
             "groups": ["meat"]
         },
         {
             "id": 11,
             "name": "Turkey",
             "price": "3.99",
-            "image": "/public/Images/image_turkey.jpg",
+            "image": "/Images/image_turkey.jpg",
             "groups": ["meat"]
         },
         {
             "id": 12,
             "name": "Sprite",
             "price": "1.99",
-            "image": "/public/Images/image_sprite.jpg",
+            "image": "/Images/image_sprite.jpg",
             "groups": ["drinks"]
         },
         {
             "id": 13,
             "name": "Pork",
             "price": "1.99",
-            "image": "/public/Images/image_pork.jpg",
+            "image": "/Images/image_pork.jpg",
             "groups": ["meat"]
         },
         {
             "id": 14,
             "name": "Cabbage",
             "price": "0.59",
-            "image": "/public/Images/image_cabbage.png",
+            "image": "/Images/image_cabbage.png",
             "groups": ["vegetables"]
         },
         {
             "id": 15,
             "name": "Lettuce",
             "price": "0.59",
-            "image": "/public/Images/image_lettuce.jpg",
+            "image": "/Images/image_lettuce.jpg",
             "groups": ["vegetables"]
         },
         {
             "id": 16,
             "name": "Tomato",
             "price": "0.59",
-            "image": "/public/Images/image_tomato.jpg",
+            "image": "/Images/image_tomato.jpg",
             "groups": ["vegetables"]
         }
         
